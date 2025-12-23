@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 int main()
 {
-	Contact contacts;
+	Phonebook Phonebook;
 
 
 	std::string command_line;

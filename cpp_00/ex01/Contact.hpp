@@ -18,11 +18,11 @@
 class Contact
 {
 	private:
-		std::string first_name;
-		std::string last_name;
-		std::string nickname;
-		std::string	phone_num;
-		std::string darkest_secret;
+		std::string First_Name;
+		std::string Last_Name;
+		std::string Nickname;
+		std::string	Phone_Num;
+		std::string Darkest_Secret;
 		
 	public:
 		Contact();

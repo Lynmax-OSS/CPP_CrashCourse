@@ -10,10 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Contact.hpp"
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
 
-class PhoneBook
+#include "Contact.hpp"
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <sstream>
+
+class Phonebook
 {
 	private:
 		Contact contacts[8];
@@ -23,7 +29,9 @@ class PhoneBook
 		static std::string	formatField(const std::string	&s);
 
 	public:
-		PhoneBook();
+		Phonebook();
 		void	addContact();
 		void	searchContact() const;
 };
+
+#endif
