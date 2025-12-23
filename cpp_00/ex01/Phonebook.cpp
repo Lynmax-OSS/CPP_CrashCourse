@@ -33,6 +33,37 @@ static void prompt_for_cmd(const std::string &fieldName, std::string &out)
 		}
 		if (!out.empty())
 			return ;
-		std::cout << "Fill in field you little dingus >:<" << std::endl;
+		std::cout << "Fill in field you little dingus 3:(" << std::endl;
 	}
+}
+
+void	Phonebook::addContact()
+{
+	std::string first;
+	std::string last;
+	std::string nick;
+	std::string phone;
+	std::string secret;
+
+	prompt_for_cmd("First Name", first);
+	if (first.empty() && std::cin.eof())	return;
+	prompt_for_cmd("Last Name", last);
+	if (last.empty() && std::cin.eof())	return;
+	prompt_for_cmd("Nickname", nick);
+	if (nick.empty() && std::cin.eof())	return;
+	prompt_for_cmd("Phone Number", phone);
+	if (phone.empty() && std::cin.eof())	return;
+	prompt_for_cmd("Darkest Secret", secret);
+	if (secret.empty() && std::cin.eof())	return;
+
+	contacts[index].setFirstName(first);
+	contacts[index].setLastName(last);
+	contacts[index].setNickname(nick);
+	contacts[index].setPhoneNumber(phone);
+	contacts[index].setDarkestSecret(secret);
+
+	index = (index + 1) % 8;
+	if (count < 8)
+		count++;
+	std::cout << "Contact added." << std::endl;
 }
