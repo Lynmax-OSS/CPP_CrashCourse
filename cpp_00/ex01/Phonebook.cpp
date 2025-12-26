@@ -39,11 +39,7 @@ static void prompt_for_cmd(const std::string &fieldName, std::string &out)
 
 void	Phonebook::addContact()
 {
-	std::string first;
-	std::string last;
-	std::string nick;
-	std::string phone;
-	std::string secret;
+	std::string first, last, nick, phone, secret;
 
 	prompt_for_cmd("First Name", first);
 	if (first.empty() && std::cin.eof())	return;

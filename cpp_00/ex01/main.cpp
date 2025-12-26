@@ -15,12 +15,26 @@
 int main()
 {
 	Phonebook Phonebook;
-
-
 	std::string command_line;
 
-	while (1)
+	while (true)
 	{
-		std::getline
+		std::cout << "Enter command: ";
+		if (!getline(std::cin, command_line));
+		{
+			std::cout << std::endl;
+			break;
+		}
+		if (command_line == "ADD")
+			Phonebook.addContact();
+		else if (command_line == "SEARCH")
+			Phonebook.searchContact();
+		else if (command_line == "EXIT")
+			break;
+		else if (command_line.empty())
+			continue;
+		else 
+			std::cout << "Write an actual command bitch." << std::endl;
 	}
+	return (0);
 }
