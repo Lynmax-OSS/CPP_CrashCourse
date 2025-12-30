@@ -20,7 +20,7 @@ int main()
 	while (true)
 	{
 		std::cout << "Enter command: ";
-		if (!std::getline(std::cin, command_line));
+		if (!std::getline(std::cin, command_line))
 		{
 			std::cout << std::endl;
 			break;

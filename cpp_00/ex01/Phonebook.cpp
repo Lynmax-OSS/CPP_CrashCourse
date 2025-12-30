@@ -83,4 +83,25 @@ void	Phonebook::searchContact () const
 				  << std::setw(10) << formatField(c.getLastName()) << "|"
 				  << std::setw(10) << formatField(c.getNickname()) << "|" << std::endl;
 	}
+
+	std::string line;
+	std::cout << "Enter index to view details: ";
+	if (!std::getline(std::cin, line))
+		return;
+
+	std::istringstream iss(line);
+	int idx;
+	if (!(iss >> idx) || idx < 0 || idx >= count)
+	{
+		std::cout << "invalid index" << std::endl;
+		return;
+	}
+
+	const Contact &c = contacts[idx];
+
+	std::cout << "First Name: " << c.getFirstName() << std::endl;
+	std::cout << "Last Name: " << c.getLastName() << std::endl;
+	std::cout << "Nickname: " << c.getNickname() << std::endl;
+	std::cout << "Phone Number: " << c.getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret: " << c.getDarkestSecret() << std::endl;
 }
