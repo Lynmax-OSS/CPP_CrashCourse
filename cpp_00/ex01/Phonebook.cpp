@@ -63,3 +63,24 @@ void	Phonebook::addContact()
 		count++;
 	std::cout << "Contact added." << std::endl;
 }
+
+void	Phonebook::searchContact () const
+{
+	if (count == 0)
+	{
+		std::cout << "Feed me some contact numbers first!" << std::endl;
+		return;
+	}
+	std::cout << std::setw(10) << "index" << "|"
+			  << std::setw(10) << "First Name" << "|"
+			  << std::setw(10) << "Last Name" << "|"
+			  << std::setw(10) << "nickname" << "|" << std::endl;
+	for (int i = 0; i < count; i++)
+	{
+		const Contact &c = contacts[i];
+		std::cout << std::setw(10) << i << "|"
+				  << std::setw(10) << formatField(c.getFirstName()) << "|"
+				  << std::setw(10) << formatField(c.getLastName()) << "|"
+				  << std::setw(10) << formatField(c.getNickname()) << "|" << std::endl;
+	}
+}
