@@ -8,14 +8,15 @@ SRCS=tests.cpp Account.cpp
 OBJS=$(SRCS:.cpp=.o)
 
 all: $(NAME)
+
 $(NAME): $(OBJS)
-	$(C) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(Name)
+	rm -f $(NAME)
 
 re: fclean all
 
