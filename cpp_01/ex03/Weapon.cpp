@@ -2,7 +2,7 @@
 
 Weapon::Weapon()
 {
-	std::cout << "weapon has been created" << std::endl;
+	std::cout << "weapon class has been created" << std::endl;
 }
 
 Weapon::Weapon(std::string type): type(type)
