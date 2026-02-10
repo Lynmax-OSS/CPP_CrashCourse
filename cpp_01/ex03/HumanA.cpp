@@ -12,10 +12,5 @@ HumanA::~HumanA()
 
 void	HumanA::attack()
 {
-	std::cout << name << " attacks with their weapon " << weapon->getType() << std::endl;
-}
-
-std::string HumanA::getName()
-{
-	return(name);
+	std::cout << this->name << " attacks with their weapon " << this->weapon->getType() << std::endl;
 }
