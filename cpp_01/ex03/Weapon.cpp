@@ -10,10 +10,10 @@ Weapon::Weapon(std::string type): type(type)
 	std::cout <<  type <<" has been created" << std::endl;
 }
 
-Weapon::~Weapon()
-{
-	std::cout << "weapon has been destroyed" << std::endl;
-}
+// Weapon::~Weapon()
+// {
+// 	std::cout << "weapon has been destroyed" << std::endl;
+// }
 
 std::string Weapon::getType()
 {

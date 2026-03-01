@@ -12,7 +12,6 @@ class	HumanA
 		HumanA(std::string name, Weapon &weapon);
 		~HumanA();
 		void		attack();
-		std::string	getName();
 };
 
 #endif
