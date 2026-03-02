@@ -13,11 +13,7 @@ class	HumanB
 		HumanB(std::string name, Weapon &weapon);
 		~HumanB();
 		void	attack();
-<<<<<<< HEAD
-		void	setWeapon(Weapon weapon);
-=======
 		void	setWeapon(Weapon &weapon);
->>>>>>> 3b83e0d388736b95eb533c506b82418b5711cdd9
 };
 
 #endif
