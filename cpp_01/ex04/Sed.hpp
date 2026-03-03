@@ -5,4 +5,6 @@
 #include <iostream>
 #include <string>
 
+std::string replacer(const std::string& fileContent, const std::string& toReplace, const std::string& replaceWith);
+
 #endif
