@@ -2,7 +2,10 @@
 
 Harl::Harl() 
 {
-	std::cout << "class has been constructed" << std::endl;
+}
+
+Harl::~Harl()
+{
 }
 
 void	Harl::debug(void)
@@ -27,7 +30,7 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string level)
 {
-	std::levels[4] ={
+	std::string levels[4] = {
 		"DEBUG",
 		"INFO",
 		"WARNING",
@@ -43,7 +46,7 @@ void	Harl::complain(std::string level)
 
 	for (int i = 0; i < 4; i++)
 	{
-		if (level == level[i])
+		if (level == levels[i])
 		{
 			(this ->*function[i])();
 			return;
