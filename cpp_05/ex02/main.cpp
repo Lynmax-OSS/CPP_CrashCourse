@@ -1,13 +1,14 @@
 #include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int	main()
 {
 	try
 	{
-		Bureaucrat	Bobby("Bobby", 10);
-		Form		one_billion_to_isreal("money pack", 10, 25);
-		Bobby.signForm(Bobby, one_billion_to_isreal);
-		
+		Bureaucrat	Bobby("Bobby", 1);
+		PresidentialPardonForm Netinyahu("Netinyahu");
+		// Bobby.signForm(Bobby, Netinyahu);
+		Netinyahu.execute(Bobby);
 	}
 	catch(const std::exception &e)
 	{
