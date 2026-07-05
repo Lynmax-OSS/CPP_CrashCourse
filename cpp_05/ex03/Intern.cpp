@@ -42,6 +42,8 @@ AForm *Intern::makeForm(std::string formName, std::string target)
 		}
 		if (retForm == NULL)
 			throw  (InvalidFormException());
+		else
+			return retForm;
 	}
 	catch(std::exception &e)
 	{
