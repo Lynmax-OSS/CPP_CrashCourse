@@ -97,7 +97,21 @@ bool	isPseudoDouble(const std::string &str)
 	return (str == "nan" || str == "+inf" || str == "-inf");
 }
 
+float parsePseudoFloat(const std::string& str)
+{
+	if (str == "nanf")  return std::numeric_limits<float>::quiet_NaN();
+	if (str == "+inff") return std::numeric_limits<float>::infinity();
+	if (str == "-inff") return -std::numeric_limits<float>::infinity();
+	return 0.0f;
+}
 
+double parsePseudoDouble(const std::string& str)
+{
+	if (str == "nan")  return std::numeric_limits<double>::quiet_NaN();
+	if (str == "+inf") return std::numeric_limits<double>::infinity();
+	if (str == "-inf") return -std::numeric_limits<double>::infinity();
+	return 0.0;
+}
 
 dataType check_type(const std::string &str)
 {
@@ -117,19 +131,46 @@ dataType check_type(const std::string &str)
 		return (INVALID);
 }
 
+void	printALL(double value)
+{
+	if (std::isprint(value))
+		std::cout << "char: " << static_cast<char> (value) << std::endl;
+	else if (value < 32)
+		std::cout << "char: " << "char: Non displayable" << std::endl;
+	std::cout << "int: " << static_cast<int>(value) << std::endl;
+
+}
+
 void	ScalarConverter::convert(const std::string &str)
 {
 	dataType type = check_type(str);
-	double	value = static_cast<double>(str[0]);
 	switch (type)
 	{
-	case CHAR:
-		
-		break;
-	case INT:
-		int 
-	default:
-		break;
+		case CHAR:
+		{
+			char c = str[0];
+			break;
+		}
+		case INT:
+		{
+			long i = std::strtol(str.c_str(), NULL, 10);
+			break;
+		}
+		case FLOAT:
+		{
+			float f = isPseudoFloat(str) ? parsePseudoFloat(str) : std::strtof(str.c_str(), NULL);
+			break;
+		}
+		case DOUBLE:
+		{
+			double d = isPseudoDouble(str) ? parsePseudoDouble(str) : std::strtod(str.c_str(), NULL);
+			break;
+		}
+		case INVALID:
+		{
+			std::cout << "Invalid litteral" << std::endl;
+			break;
+		}
 	}
 }
 
