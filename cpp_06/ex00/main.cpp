@@ -2,6 +2,5 @@
 
 int	main()
 {
-	ScalarConverter converter;
-	converter.convert("-inf");
+	ScalarConverter::convert("32");
 }

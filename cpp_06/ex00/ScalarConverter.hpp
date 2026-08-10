@@ -12,11 +12,11 @@ enum dataType {CHAR, INT, FLOAT, DOUBLE, INVALID};
 class ScalarConverter
 {
 	private:
-	public:
 		ScalarConverter();
 		~ScalarConverter();
 		ScalarConverter &operator=(ScalarConverter &other);
 		ScalarConverter(ScalarConverter &other);
+	public:
 		static void	convert(const std::string &str);
 };
 
