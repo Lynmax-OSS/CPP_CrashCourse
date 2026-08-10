@@ -131,16 +131,6 @@ dataType check_type(const std::string &str)
 		return (INVALID);
 }
 
-void	printALL(double value)
-{
-	if (std::isprint(value))
-		std::cout << "char: " << static_cast<char> (value) << std::endl;
-	else if (value < 32)
-		std::cout << "char: " << "char: Non displayable" << std::endl;
-	std::cout << "int: " << static_cast<int>(value) << std::endl;
-
-}
-
 void	ScalarConverter::convert(const std::string &str)
 {
 	dataType type = check_type(str);
@@ -149,21 +139,25 @@ void	ScalarConverter::convert(const std::string &str)
 		case CHAR:
 		{
 			char c = str[0];
+			printAll(static_cast<double>(c));
 			break;
 		}
 		case INT:
 		{
 			long i = std::strtol(str.c_str(), NULL, 10);
+			printAll(static_cast<double>(i));
 			break;
 		}
 		case FLOAT:
 		{
 			float f = isPseudoFloat(str) ? parsePseudoFloat(str) : std::strtof(str.c_str(), NULL);
+			printAll(static_cast<double>(f));
 			break;
 		}
 		case DOUBLE:
 		{
 			double d = isPseudoDouble(str) ? parsePseudoDouble(str) : std::strtod(str.c_str(), NULL);
+			printAll(d);
 			break;
 		}
 		case INVALID:
@@ -172,8 +166,4 @@ void	ScalarConverter::convert(const std::string &str)
 			break;
 		}
 	}
-}
-
-int main ()
-{
 }
